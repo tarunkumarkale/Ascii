@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+div{
+    position: relative;
+   margin-left: 40vw;
+   margin-top:30vh ;
+
+
+}
+input{
+    border-radius: 4px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 20vw;
+    height: 5vh;
+    font-size: 1.7vw;
+
+}
+button{
+    width: 8vw;
+    height: 4vh;
+    border-radius: 4px;
+}
+h1{
+    margin-left: 5vw ;
+    font-size: 1vw;
+}
+  </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="num">
+        <button id="hello">click</button>
+      
+        <h1 id="show"></h1>
+    </div>
+ 
+  <script>
+    const tarun = document.getElementById('hello')
+
+    tarun.addEventListener('click', () => {
+      const get = String(document.getElementById('num').value);
+      let result = '';
+console.log(get.split(''))
+      for (let i = 0; i < get.length; i++) {
+        let char = get[i];
+        let code = char.charCodeAt(0);
+        result += `  ${char} => Ascii number is ${code}<br>`;
+        console.log(code);
+      }
+
+      document.getElementById('show').innerHTML = result;
+    })
+  </script>
+</body>
+
+</html>
